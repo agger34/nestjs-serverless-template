@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  dynamodb:
+    image: amazon/dynamodb-local
+    container_name: dynamodb
+    restart: always
+    ports:
+      - "8000:8000"
+  # mongo:
+  #   image: mongo
+  #   container_name: mongo
+  #   restart: always
+  #   ports:
+  #     - "27018:27017"
+  # nest-template:
+  #   build: .
+  #   container_name: nest-template
+  #   environment:
+  #     - MONGO_URI=
+  #     - APP_PORT='3000'
+  #     - JWT_SECRET='h3it'
+  #     - JWT_EXPIRES_IN='600s'
+  #     - IS_OFFLINE='true'
+  #     - DYNAMODB_ENDPOINT='dynamodb:8000'
+  #   depends_on:
+  #     # - mongo
+  #     - dynamodb
+  #   ports:
+  #     - "3005:3000"
